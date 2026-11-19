@@ -57,6 +57,8 @@ section > .eyebrow { color: var(--green); }
 .bar-track { position: relative; height: .78rem; background: #ebeee7; }
 .bar-track i { display: block; width: var(--share); height: 100%; background: var(--rust); }
 .bar-track .positive { background: var(--green); }
+.benchmark .bar-track i { background: #788b82; }
+.benchmark .bar-track .portfolio { background: var(--green); }
 .bar-row strong { text-align: right; white-space: nowrap; font: 600 .91rem var(--mono); }
 .loss { color: var(--rust); }
 .gain { color: var(--green); }
@@ -120,6 +122,7 @@ footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: .85rem; }
       <span class="eyebrow">Personal investment review</span>
       <nav aria-label="Report sections">
         <a href="#attribution">Attribution</a>
+        <a href="#benchmarks">Benchmarks</a>
         <a href="#reconciliation">Reconciliation</a>
         <a href="#methodology">Methodology</a>
       </nav>
@@ -141,7 +144,7 @@ footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: .85rem; }
 <main class="wrap">
   <div class="metrics" aria-label="Portfolio summary">
     <div class="metric"><strong>¥439,400</strong><span>Closing investment value</span></div>
-    <div class="metric"><strong>−8.51%</strong><span>IBKR time-weighted return in EUR through 17 Nov</span></div>
+    <div class="metric"><strong>−8.74%</strong><span>IBKR time-weighted return in EUR through 18 Nov</span></div>
     <div class="metric"><strong>−3.21%</strong><span>EUR/CNY reference-rate change</span></div>
   </div>
   <section id="attribution" aria-labelledby="attribution-heading">
@@ -170,6 +173,19 @@ footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: .85rem; }
       </article>
     </div>
   </section>
+  <section id="benchmarks" aria-labelledby="benchmarks-heading">
+    <div class="eyebrow">Benchmark comparison</div>
+    <h2 id="benchmarks-heading">How the portfolio compared</h2>
+    <p class="lede">From the October 6 close to the November 18 close, my combined portfolio lost an estimated <strong>11.80% in CNY</strong>. It held up <strong>1.84 percentage points better than the Nasdaq-100</strong> and trailed <strong>the S&amp;P 500 by 4.94 points</strong>.</p>
+    <figure class="attribution benchmark">
+      <figcaption>October 6–November 18, 2026 · Cumulative return in CNY</figcaption>
+      <div class="bar-row"><span>Combined portfolio</span><span class="bar-track" aria-hidden="true"><i class="portfolio" style="--share:86.5%"></i></span><strong>−11.80%</strong></div>
+      <div class="bar-row"><span>IBKR account</span><span class="bar-track" aria-hidden="true"><i class="portfolio" style="--share:85.6%"></i></span><strong>−11.67%</strong></div>
+      <div class="bar-row"><span>Nasdaq-100</span><span class="bar-track" aria-hidden="true"><i style="--share:100%"></i></span><strong>−13.64%</strong></div>
+      <div class="bar-row"><span>S&amp;P 500</span><span class="bar-track" aria-hidden="true"><i style="--share:50.3%"></i></span><strong>−6.86%</strong></div>
+    </figure>
+    <p class="note">The comparison ends on November 18 to align the broker’s daily performance, U.S. index closes and ECB rates. The cash-flow reconciliation uses the original November 19 account snapshot. Both indices are equity-only price benchmarks and exclude dividends. My portfolio also held gold and short-term fixed income.</p>
+  </section>
   <section id="reconciliation" aria-labelledby="reconciliation-heading">
     <div class="eyebrow">Cash-flow reconciliation</div>
     <h2 id="reconciliation-heading">From opening to closing value</h2>
@@ -187,7 +203,7 @@ footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: .85rem; }
     <h2 id="methodology-heading">How I measured it</h2>
     <details open>
       <summary>IBKR balances, trades, and returns</summary>
-      <p>The opening and closing values came from IBKR’s October 6 close and November 19 account snapshot. The daily NAV and return series imply a €3,500 contribution on October 30. IBKR’s official EUR time-weighted series runs through November 17. I used position sizes, historical prices and available executions to estimate the holding-level contributions.</p>
+      <p>The opening and closing values came from IBKR’s October 6 close and the November 19 account snapshot used for the original review. The daily NAV and return series imply a €3,500 contribution on October 30. I used position sizes, historical prices and available executions to estimate the holding-level contributions.</p>
     </details>
     <details open>
       <summary>Currency translation</summary>
@@ -197,12 +213,18 @@ footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: .85rem; }
       <summary>Outside investment estimates and scope</summary>
       <p>I estimated the two outside holdings using QQQ and Xetra-Gold price changes through November 18, converted to CNY. The estimates assume both positions were held throughout the period with no cash flows. Actual fund returns may differ due to tracking, hedging, fees, or trade dates. The report covers investments only. Bank balances and other household assets are outside its scope.</p>
     </details>
+    <details>
+      <summary>Benchmark and portfolio return calculations</summary>
+      <p>I linked the estimated combined portfolio returns before and after the October 30 contribution, treating the contribution as start-of-day capital. The IBKR comparison converts its reported EUR time-weighted return into CNY using the same endpoint exchange rates. Index returns use the NDX and SPX closing levels from IBKR market data, converted from USD to CNY using ECB cross-rates.</p>
+    </details>
     <ul class="sources" aria-label="Public reference sources">
       <li><a href="https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?9f6f9e9b5d98ef83660994fc1fcb22d8=">ECB · 6 Oct</a></li>
       <li><a href="https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?e93c1d41ed5d08a215941b22e0b087cc=">ECB · 30 Oct</a></li>
       <li><a href="https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?666ab079406294f020b60ce6813916c5=">ECB · 18 Nov</a></li>
       <li><a href="https://www.ishares.com/uk/individual/en/products/304353/ishares-nasdaq-100-ucits-etf">iShares · NQSE</a></li>
       <li><a href="https://www.xetra-gold.com/en/investing-in-gold/">Deutsche Börse · Xetra-Gold</a></li>
+      <li><a href="https://indexes.nasdaqomx.com/Index/Overview/NDX">Nasdaq · Nasdaq-100</a></li>
+      <li><a href="https://www.spglobal.com/spdji/en/indices/equity/sp-500/">S&amp;P Dow Jones Indices · S&amp;P 500</a></li>
     </ul>
   </section>
 </main>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A personal portfolio drawdown review from 6 October to 19 November 2026, measured in Chinese yuan.">
+<meta name="color-scheme" content="light">
+<title>Portfolio Performance Report · October–November 2026</title>
+<style>
+:root {
+  --paper: #f8f5ef;
+  --ink: #142622;
+  --muted: #4d625a;
+  --line: #d6dfd4;
+  --dark: #102d26;
+  --lime: #d9eea5;
+  --rust: #983f30;
+  --green: #236448;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --serif: Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
+a { color: inherit; text-underline-offset: .22em; }
+a:focus-visible, summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.wrap { width: min(1100px, calc(100% - 3rem)); margin-inline: auto; }
+.mono, .eyebrow { font-family: var(--mono); }
+.eyebrow { font-size: .76rem; letter-spacing: .13em; text-transform: uppercase; }
+.hero { background: var(--dark); color: #f5f6eb; }
+.masthead { border-bottom: 1px solid #4f6d5f; }
+.masthead .wrap { display: flex; gap: 1rem; justify-content: space-between; align-items: center; padding-block: 1.1rem; }
+.masthead a { text-decoration: none; }
+.masthead nav { display: flex; flex-wrap: wrap; gap: .45rem 1.3rem; font-size: .84rem; }
+.masthead nav a:hover { text-decoration: underline; }
+.hero-body { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.8rem; align-items: end; padding-block: 4.3rem 4rem; }
+.hero .eyebrow { color: var(--lime); margin: 0 0 1.1rem; }
+h1, h2, h3, .display { font-family: var(--serif); font-weight: 400; }
+h1 { margin: 0; font-size: clamp(3rem, 7vw, 6.05rem); line-height: .97; letter-spacing: -.078em; }
+h2 { margin: .25rem 0 1rem; font-size: clamp(2.25rem, 4.7vw, 4.15rem); line-height: 1; letter-spacing: -.06em; }
+h3 { margin: 0 0 .55rem; font-size: 1.65rem; line-height: 1.15; letter-spacing: -.025em; }
+.hero-copy { max-width: 33rem; margin: 1.45rem 0 0; color: #d7e4d6; }
+.hero-number { min-width: 0; padding: 1.45rem 0 .35rem 1.65rem; border-left: 1px solid #6d8b75; }
+.hero-number .display { display: block; font-size: clamp(3.1rem, 7vw, 6rem); line-height: 1; letter-spacing: -.075em; color: var(--lime); white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+.hero-number p { margin: .65rem 0 0; color: #d7e4d6; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+.metric { padding: 1.7rem 1.35rem; border-left: 1px solid var(--line); }
+.metric:first-child { padding-left: 0; border-left: 0; }
+.metric strong { display: block; font: 400 clamp(1.75rem, 4vw, 2.9rem)/1.12 var(--serif); letter-spacing: -.05em; }
+.metric span { color: var(--muted); font-size: .88rem; }
+section { padding-block: 3.9rem; border-bottom: 1px solid var(--line); }
+section > .eyebrow { color: var(--green); }
+.lede { margin: 0 0 1.55rem; max-width: 43rem; color: var(--muted); }
+.attribution { margin: 0; border: 1px solid var(--line); background: #fffdf9; border-radius: .4rem; padding: 1.35rem; }
+.attribution figcaption { color: var(--muted); margin-bottom: .65rem; }
+.bar-row { display: grid; grid-template-columns: minmax(8.6rem, 1fr) minmax(0, 3fr) 6.3rem; gap: .8rem; align-items: center; padding: .68rem 0; border-top: 1px solid #e6ebe4; }
+.bar-track { position: relative; height: .78rem; background: #ebeee7; }
+.bar-track i { display: block; width: var(--share); height: 100%; background: var(--rust); }
+.bar-track .positive { background: var(--green); }
+.bar-row strong { text-align: right; white-space: nowrap; font: 600 .91rem var(--mono); }
+.loss { color: var(--rust); }
+.gain { color: var(--green); }
+.columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; margin-top: 1.5rem; }
+.columns article { border-top: 2px solid #91ab93; padding: 1rem .18rem 0 0; }
+.columns p { margin: 0; color: var(--muted); }
+.bridge { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.bridge div { background: #fffdf9; padding: 1.25rem; }
+.bridge div:last-child { background: #e9efdf; }
+.bridge strong { display: block; font: 400 clamp(1.4rem, 3vw, 2.3rem)/1.15 var(--serif); letter-spacing: -.04em; }
+.bridge span { display: block; margin: .45rem 0 0; color: var(--muted); font-size: .88rem; }
+.note { font-size: .87rem; color: var(--muted); margin: 1rem 0 0; }
+details { max-width: 50rem; padding: .9rem 0; border-top: 1px solid var(--line); }
+details:last-child { border-bottom: 1px solid var(--line); }
+details p { margin: .65rem 0 .15rem; color: var(--muted); }
+summary { cursor: pointer; font-weight: 650; }
+.sources { display: flex; flex-wrap: wrap; gap: .55rem 1.35rem; margin: 1.1rem 0 0; padding: 0; list-style: none; color: var(--green); font-size: .86rem; }
+footer { padding: 1.5rem 0 2rem; color: var(--muted); font-size: .85rem; }
+@media (max-width: 720px) {
+  .wrap { width: calc(100% - 2rem); }
+  .hero-body { grid-template-columns: 1fr; gap: 1.8rem; padding-block: 2.8rem; }
+  .hero-number { border-left: 0; border-top: 1px solid #6d8b75; padding: 1.35rem 0 0; }
+  .columns { grid-template-columns: 1fr; gap: 1rem; }
+  .bridge { grid-template-columns: 1fr 1fr; }
+  .metric { padding: 1rem .65rem; }
+  .metric span { font-size: .76rem; }
+  section { padding-block: 2.65rem; }
+  .bar-row { grid-template-columns: minmax(6.5rem, 1fr) minmax(0, 1fr) 5.5rem; gap: .45rem; font-size: .87rem; }
+  .bar-row strong { font-size: .78rem; }
+  .attribution { padding: .85rem; }
+}
+@media (max-width: 410px) {
+  .masthead .wrap { align-items: flex-start; flex-direction: column; gap: .4rem; }
+}
+@media (max-width: 370px) {
+  .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .metric { padding-inline: .45rem; }
+  .metric strong { font-size: 1.44rem; }
+  .hero-body { grid-template-columns: minmax(0, 1fr); }
+  h1 { font-size: 2.75rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  body { background: white; font-size: 10pt; }
+  .hero, .hero-number, .hero .eyebrow, .hero-number .display, .hero-copy, .hero-number p { background: white; color: #142622; }
+  .hero-body, section { padding-block: 1.1rem; }
+  .masthead nav { display: none; }
+  .hero-body { grid-template-columns: 1.3fr 1fr; }
+  h1 { font-size: 36pt; }
+  h2 { font-size: 25pt; }
+  .hero-number .display { font-size: 36pt; }
+  section, figure, .bridge { break-inside: avoid; }
+  .attribution, .bridge { print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="masthead">
+    <div class="wrap">
+      <span class="eyebrow">Personal investment review</span>
+      <nav aria-label="Report sections">
+        <a href="#attribution">Attribution</a>
+        <a href="#reconciliation">Reconciliation</a>
+        <a href="#methodology">Methodology</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap hero-body">
+    <div>
+      <p class="eyebrow"><time datetime="2026-10-06">06 Oct</time> — <time datetime="2026-11-19">19 Nov 2026</time></p>
+      <h1>Portfolio<br>performance report</h1>
+      <p class="hero-copy">I reviewed the decline from my IBKR year-to-date performance peak to understand what it cost in yuan. Nasdaq was the largest driver, followed by the weaker euro and a decline in gold.</p>
+    </div>
+    <div class="hero-number">
+      <div class="eyebrow">Estimated investment loss · CNY</div>
+      <strong class="display">−¥56,500</strong>
+      <p>11.4% of opening value plus contributions</p>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="metrics" aria-label="Portfolio summary">
+    <div class="metric"><strong>¥439,400</strong><span>Closing investment value</span></div>
+    <div class="metric"><strong>−8.51%</strong><span>IBKR time-weighted return in EUR through 17 Nov</span></div>
+    <div class="metric"><strong>−3.21%</strong><span>EUR/CNY reference-rate change</span></div>
+  </div>
+  <section id="attribution" aria-labelledby="attribution-heading">
+    <div class="eyebrow">Performance attribution</div>
+    <h2 id="attribution-heading">What drove the decline</h2>
+    <p class="lede">The review covers my IBKR account and two investments held outside it. The largest loss came from Nasdaq exposure across both.</p>
+    <figure class="attribution">
+      <figcaption>Estimated contribution to the change in portfolio value, in CNY</figcaption>
+      <div class="bar-row"><span>Nasdaq</span><span class="bar-track" aria-hidden="true"><i style="--share:100%"></i></span><strong class="loss">−¥34,500</strong></div>
+      <div class="bar-row"><span>EUR/CNY</span><span class="bar-track" aria-hidden="true"><i style="--share:38.3%"></i></span><strong class="loss">−¥13,200</strong></div>
+      <div class="bar-row"><span>Gold</span><span class="bar-track" aria-hidden="true"><i style="--share:27.1%"></i></span><strong class="loss">−¥9,400</strong></div>
+      <div class="bar-row"><span>Other and residual</span><span class="bar-track" aria-hidden="true"><i class="positive" style="--share:1.7%"></i></span><strong class="gain">+¥600</strong></div>
+    </figure>
+    <div class="columns">
+      <article>
+        <h3>Nasdaq</h3>
+        <p>About 61% of the decline. IBKR’s Nasdaq holdings accounted for roughly ¥28,500, led by the EUR-hedged NQSE position. The outside holding added an estimated ¥6,000 of losses.</p>
+      </article>
+      <article>
+        <h3>Currency</h3>
+        <p>The euro fell from ¥7.5554 to ¥7.3126. The change reduced the RMB value of my opening IBKR balance and October contribution by about ¥13,200.</p>
+      </article>
+      <article>
+        <h3>Gold</h3>
+        <p>Gold accounted for about ¥6,300 of losses through IBKR’s Xetra-Gold holding and an estimated ¥3,000 through the outside position.</p>
+      </article>
+    </div>
+  </section>
+  <section id="reconciliation" aria-labelledby="reconciliation-heading">
+    <div class="eyebrow">Cash-flow reconciliation</div>
+    <h2 id="reconciliation-heading">From opening to closing value</h2>
+    <p class="lede">The October 30 contribution increased the account balance and is included in the bridge as new capital. The loss is measured against opening value plus that contribution.</p>
+    <div class="bridge" aria-label="Opening portfolio value plus new capital minus losses equals closing value">
+      <div><strong>¥469,892</strong><span>Estimated opening value</span></div>
+      <div><strong class="gain">+¥26,014</strong><span>October 30 contribution</span></div>
+      <div><strong class="loss">−¥56,463</strong><span>Estimated investment loss</span></div>
+      <div><strong>¥439,443</strong><span>Closing value</span></div>
+    </div>
+    <p class="note">The bridge is rounded to the yuan. Attribution figures are rounded to the nearest ¥100.</p>
+  </section>
+  <section id="methodology" aria-labelledby="methodology-heading">
+    <div class="eyebrow">Methodology and sources</div>
+    <h2 id="methodology-heading">How I measured it</h2>
+    <details open>
+      <summary>IBKR balances, trades, and returns</summary>
+      <p>The opening and closing values came from IBKR’s October 6 close and November 19 account snapshot. The daily NAV and return series imply a €3,500 contribution on October 30. IBKR’s official EUR time-weighted series runs through November 17. I used position sizes, historical prices and available executions to estimate the holding-level contributions.</p>
+    </details>
+    <details open>
+      <summary>Currency translation</summary>
+      <p>I converted the opening balance, the contribution and the closing balance at their respective ECB reference rates. The latest reference rate available for this review was November 18. The EUR/CNY line measures the change in RMB value of the opening IBKR capital and the contribution. The other IBKR lines express the estimated EUR investment results in yuan at the ending rate.</p>
+    </details>
+    <details open>
+      <summary>Outside investment estimates and scope</summary>
+      <p>I estimated the two outside holdings using QQQ and Xetra-Gold price changes through November 18, converted to CNY. The estimates assume both positions were held throughout the period with no cash flows. Actual fund returns may differ due to tracking, hedging, fees, or trade dates. The report covers investments only. Bank balances and other household assets are outside its scope.</p>
+    </details>
+    <ul class="sources" aria-label="Public reference sources">
+      <li><a href="https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?9f6f9e9b5d98ef83660994fc1fcb22d8=">ECB · 6 Oct</a></li>
+      <li><a href="https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?e93c1d41ed5d08a215941b22e0b087cc=">ECB · 30 Oct</a></li>
+      <li><a href="https://www.ecb.europa.eu/stats/shared/pdf/eurofxref.pdf?666ab079406294f020b60ce6813916c5=">ECB · 18 Nov</a></li>
+      <li><a href="https://www.ishares.com/uk/individual/en/products/304353/ishares-nasdaq-100-ucits-etf">iShares · NQSE</a></li>
+      <li><a href="https://www.xetra-gold.com/en/investing-in-gold/">Deutsche Börse · Xetra-Gold</a></li>
+    </ul>
+  </section>
+</main>
+<footer class="wrap">Reporting currency CNY · Prepared 19 November 2026</footer>
+</body>
+</html>
